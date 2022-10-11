@@ -16,9 +16,6 @@ from confluent_kafka.schema_registry.protobuf import ProtobufDeserializer
 from confluent_kafka.serialization import StringDeserializer
 # noinspection PyUnresolvedReferences
 from google.protobuf.json_format import MessageToJson
-from .protos.ldm_tur import start_ldm_tur_pb2
-from .protos.ldm_oxf import start_ldm_oxf_pb2
-from .protos.luti_oxf import start_luti_oxf_pb2
 from .config import Config
 
 config = Config()
