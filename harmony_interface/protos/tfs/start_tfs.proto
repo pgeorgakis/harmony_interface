@@ -1,0 +1,84 @@
+syntax = "proto2";
+
+package harmonyServer;
+
+message StartTFS {
+  required string scenarioId = 1;
+  required Inputs inputs = 2;
+  required Outputs outputs = 3;
+
+  message Inputs {
+    required string label = 1;
+    required string modules = 2;
+    required string dimensions = 3;
+    required string skimTime = 4;
+    required string skimDistance = 5;
+    required string links = 6;
+    required string nodes = 7;
+    required string zones = 8;
+    required string segs = 9;
+    required string superZones = 10;
+    required string commodityMatrixSFS = 11;
+    required string firmsSFS = 12;
+    required string distributionCenters = 13;
+    required string makeDistribution = 14;
+    required string useDistribution = 15;
+    required string parcelNodes = 16;
+    required string cepShares = 17;
+    required string departureTimeParcels = 18;
+    required string emissionFacsRuralEmpty = 19;
+    required string emissionFacsRuralFull = 20;
+    required string emissionFacsHighwayEmpty = 21;
+    required string emissionFacsHighwayFull = 22;
+    required string emissionFacsUrbanEmpty = 23;
+    required string emissionFacsUrbanFull = 24;
+    required string ZEZconsolidation = 25;
+    required string ZEZscenario = 26;
+    required string costPerVehType = 27;
+    required string costSourcing = 28;
+    required string paramsTimeOfDay = 29;
+    required string paramsShipSizeVehType = 30;
+    required string paramsEndTourFirst = 31;
+    required string paramsEndTourLater = 32;
+    required string paramsParcelB2C = 33;
+    required string paramsProdService = 34;
+    required string paramsDistDecayService = 35;
+    required string MRDHtoNUTS3 = 36;
+    required string MRDHtoCOROP = 37;
+    required string NUTS3toMRDH = 38;
+    required string nstrToLogisticSegment = 39;
+    required string vehicleCapacity = 40;
+    required string logisticFlowtypes = 41;
+    required float parcelsPerEmployee = 42;
+    required int32 parcelsMaxVehicleLoad = 43;
+    required int32 parcelsDropTime = 44;
+    required float parcelsSuccessRateB2C = 45;
+    required float parcelsSuccessRateB2B = 46;
+    required float parcelsGrowthFreightFlows = 47;
+    required int32 yearFactor = 48;
+    required string impedanceSpeedFreight = 49;
+    required string impedanceSpeedVan = 50;
+    required string doCrowdshipping = 51;
+    required string doNearestDC = 52;
+  }
+
+  message Outputs {
+    required string logFile = 1;
+    required string shipments = 2;
+    required string shipmentsShape = 3;
+    required string shipmentsAfterScheduling = 4;
+    required string tours = 5;
+    required string toursShape = 6;
+    required string tripMatrix = 7;
+    required string parcelDemand = 8;
+    required string parcelDemandShape = 9;
+    required string parcelSchedule = 10;
+    required string parcelScheduleShape = 11;
+    required string tripMatrixParcels = 12;
+    required string tripsVanConstruction = 13;
+    required string tripsVanService = 14;
+    required string linksLoaded = 15;
+    required string linksLoadedShape = 16;
+    required string outputIndicators = 17;
+  }
+}

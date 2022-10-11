@@ -1,0 +1,57 @@
+syntax = "proto2";
+
+package harmonyServer;
+
+message StartTFSOFSDataTransform {
+  required string scenarioId = 1;
+  required Inputs inputs = 2;
+  required Outputs outputs = 3;
+
+  message Inputs {
+	required string DBHost = 1;
+	required int32 DBPort = 2;
+	optional bool DBSSL = 3;
+	optional bool DBAuthentication = 4;
+	optional string DBAuthenticationSource = 5;
+	optional string AuthenticationType = 6;
+	optional string DatabaseName = 7;
+	optional string NodesCollection = 8;
+	optional string LinksCollection = 9;
+	optional string ZonesCollection = 10;
+	required string ConsolidationCentresCollection = 11;
+	required string MicrohubsCollection = 12;
+	required string ParcelDemandCollection = 13;
+	optional string ShipmentsDemandCollection = 14;
+	optional string ShipmentsToursCollection = 15;
+	optional string ParcelToursCollection = 16;
+	optional string TravelTimesSkimCollection = 17;
+	optional string DistanceSkimCollection = 18;
+	optional string NodesFile = 19;
+	optional string LinksFile = 20;
+	optional string ZonesFile = 21;
+	required string ConsolidationCentresFile = 22;
+	required string MicroHubsFile = 23;
+	required string ParcelDemandFile = 24;
+	optional string ShipmentDemandFile = 25;
+	optional string ShipmentToursFile = 26;
+	optional string ParcelToursFile = 27;
+	optional string TravelTimesSkimFile = 28;
+	optional string DistancesSkimFile = 29;
+	required bool ReadNodes = 30;
+	required bool ReadLinks = 31;
+	required bool ReadZones = 32;
+	required bool ReadConsolidationCentres = 33;
+	required bool ReadMicrohubs = 34;
+	required bool ReadParcelDemand = 35;
+	required bool ReadShipmentsDemand = 36;
+	required bool ReadShipmentsTours = 37;
+	required bool ReadParcelTours = 38;
+	required bool ReadTravelTimesZones = 39;
+	required bool ReadDistancesZones = 40;
+  }
+  
+  message Outputs {
+    required string DataTranformResults = 1;
+  }
+}
+

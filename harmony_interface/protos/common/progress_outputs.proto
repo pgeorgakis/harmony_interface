@@ -1,0 +1,14 @@
+syntax = "proto2";
+
+package harmonyProgressOutputs;
+
+message UpdateServerWithProgressAndOutputs {
+  required string scenarioId = 1;
+  required int32 percentage = 2;
+  repeated Output outputs = 3;
+
+  message Output {
+    required string key = 1;
+    required string value = 2;
+  }
+}
