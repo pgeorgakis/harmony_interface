@@ -6,22 +6,8 @@ import threading
 from abc import abstractmethod
 from .protos.common import progress_outputs_pb2
 from .protos.common import stop_pb2
-from .protos.demoMultipleFiles import start_demo_multiple_files_pb2
-from .protos.demoMultipleFiles2 import start_demo_multiple_files2_pb2
-from .protos.demo3 import start_demo3_pb2
-from .protos.demo2 import start_demo2_pb2
-from .protos.demo import start_demo_pb2
 from .protos.tfs import start_tfs_pb2
-from .protos.sfs import start_sfs_pb2
-from .protos.ops import start_ops_pb2
-from .protos.onm import start_onm_pb2
-from .protos.trt import start_trt_pb2
-from .protos.rem import start_rem_pb2
-from .protos.dfm_lite import start_dfm_lite_pb2
-from .protos.dfm_lite_partial import start_dfm_lite_partial_pb2
-from .protos.luti_ath import start_luti_ath_pb2
-from .protos.luti_tur import start_luti_tur_pb2
-from .protos.ldm_ath import start_ldm_ath_pb2
+from .protos.tfs_ofs_data_transform import start_tfs_ofs_data_transform_pb2
 # noinspection PyUnresolvedReferences
 from confluent_kafka import DeserializingConsumer
 # noinspection PyUnresolvedReferences
@@ -106,59 +92,8 @@ class KafkaMessageReceiver(object):
         if self.topic == "tfs":
             protobuf_deserializer = ProtobufDeserializer(start_tfs_pb2.StartTFS)
 
-        elif self.topic == "sfs":
-            protobuf_deserializer = ProtobufDeserializer(start_sfs_pb2.StartSFS)
-
-        elif self.topic == "ops":
-            protobuf_deserializer = ProtobufDeserializer(start_ops_pb2.StartOPSModel)
-            
-        elif self.topic == "onm":
-            protobuf_deserializer = ProtobufDeserializer(start_onm_pb2.StartONMModel)
-            
-        elif self.topic == "trt":
-            protobuf_deserializer = ProtobufDeserializer(start_trt_pb2.StartTRTModel)
-            
-        elif self.topic == "demo":
-            protobuf_deserializer = ProtobufDeserializer(start_demo_pb2.StartDemoComponent)
-            
-        elif self.topic == "demo2":
-            protobuf_deserializer = ProtobufDeserializer(start_demo2_pb2.StartDemo2Component)
-            
-        elif self.topic == "demo3":
-            protobuf_deserializer = ProtobufDeserializer(start_demo3_pb2.StartDemo3Component)
-            
-        elif self.topic == "demo-multiple-files-1":
-            protobuf_deserializer = ProtobufDeserializer(start_demo_multiple_files_pb2.StartDemoMultipleFilesComponent)
-            
-        elif self.topic == "demo-multiple-files-2":
-            protobuf_deserializer = ProtobufDeserializer(start_demo_multiple_files2_pb2.StartDemoMultipleFilesComponent2)
-
-        elif self.topic == "rem":
-            protobuf_deserializer = ProtobufDeserializer(start_rem_pb2.StartREM)
-
-        elif self.topic == "dfm_lite":
-            protobuf_deserializer = ProtobufDeserializer(start_dfm_lite_pb2.StartDFMLite)
-
-        elif self.topic == "dfm_lite_partial":
-            protobuf_deserializer = ProtobufDeserializer(start_dfm_lite_partial_pb2.StartDFMLitePartial)
-
-        elif self.topic == "luti_ath":
-            protobuf_deserializer = ProtobufDeserializer(start_luti_ath_pb2.StartLutiAth)
-
-        elif self.topic == "luti_tur":
-            protobuf_deserializer = ProtobufDeserializer(start_luti_tur_pb2.StartLutiTur)
-
-        elif self.topic == "ldm_ath":
-            protobuf_deserializer = ProtobufDeserializer(start_ldm_ath_pb2.StartLdmAth)
-
-        elif self.topic == "ldm_tur":
-            protobuf_deserializer = ProtobufDeserializer(start_ldm_tur_pb2.StartLdmTur)
-
-        elif self.topic == "ldm_oxf":
-            protobuf_deserializer = ProtobufDeserializer(start_ldm_oxf_pb2.StartLdmOxf)
-
-        elif self.topic == "luti_oxf":
-            protobuf_deserializer = ProtobufDeserializer(start_luti_oxf_pb2.StartLutiOxf)
+        elif self.topic == "tfs_ofs_data_transform":
+            protobuf_deserializer = ProtobufDeserializer(start_tfs_ofs_data_transform_pb2.StartTFSOFSDataTransform)
 
         if protobuf_deserializer is None:
             self.logger.warning('protobuf_deserializer: checking message not possible !')
