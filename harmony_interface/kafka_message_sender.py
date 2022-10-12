@@ -83,7 +83,7 @@ class KafkaMessageSender(object):
         outputs = start_tfs_ofs_data_transform_pb2.StartTFSOFSDataTransform.Outputs(**params["outputs"])
         serializer = ProtobufSerializer(start_tfs_ofs_data_transform_pb2.StartTFSOFSDataTransform, schema_registry_client)
         conf = self.__get_producer_config(serializer)
-        message = start_tfs_ofs_data_transform_pb2.StartTFSOFSDataTransform(scenarioID = params["scenarioId"], inputs = inputs, outputs = outputs)
+        message = start_tfs_ofs_data_transform_pb2.StartTFSOFSDataTransform(scenarioId = params["scenarioId"], inputs = inputs, outputs = outputs)
         self.__send_anything(self.topic, message, conf)
 
 class ComponentKafkaMessageSender(KafkaMessageSender):
