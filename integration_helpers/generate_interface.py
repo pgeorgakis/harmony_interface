@@ -174,7 +174,7 @@ def update_kafka_message_sender():
 
 if __name__ == "__main__":
     # It expects two files in the "inputs_from_user" folder named "component.json" and "config.py"
-    check_equivalence_of_config_and_json()
+    # check_equivalence_of_config_and_json()
     generate_proto_file()
     create_folder_and_interfaces()
     update_kafka_message_receiver()

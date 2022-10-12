@@ -80,7 +80,7 @@ class KafkaMessageSender(object):
     def send_start_tfs_ofs_data_transform(self, params):
         self.logger.warning('START TFS_OFS_DATA_TRANSFORM: %s', params)
         inputs = start_tfs_ofs_data_transform_pb2.StartTFSOFSDataTransform.Inputs(**params["inputs"])
-        outputs = start_tfs_ofs_data_transform_pb2.StartTFSOFSDataTransform.Outputs(**params["inputs"])
+        outputs = start_tfs_ofs_data_transform_pb2.StartTFSOFSDataTransform.Outputs(**params["outputs"])
         serializer = ProtobufSerializer(start_tfs_ofs_data_transform_pb2, schema_registry_client)
         conf = self.__get_producer_config(serializer)
         message = start_tfs_ofs_data_transform_pb2.StartTFSOFSDataTransform(scenarioID = params["scenarioID"], inputs = inputs, outputs = outputs)
