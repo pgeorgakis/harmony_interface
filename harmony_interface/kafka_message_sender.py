@@ -5,6 +5,7 @@ from .protos.common import progress_outputs_pb2
 from .protos.common import stop_pb2
 from .protos.tfs import start_tfs_pb2
 from .protos.tfs_ofs_data_transform import start_tfs_ofs_data_transform_pb2
+from .protos.ofs import start_ofs_pb2
 
 # noinspection PyUnresolvedReferences
 from uuid import uuid4
@@ -84,6 +85,15 @@ class KafkaMessageSender(object):
         serializer = ProtobufSerializer(start_tfs_ofs_data_transform_pb2.StartTFSOFSDataTransform, schema_registry_client)
         conf = self.__get_producer_config(serializer)
         message = start_tfs_ofs_data_transform_pb2.StartTFSOFSDataTransform(scenarioId = params["scenarioId"], inputs = inputs, outputs = outputs)
+        self.__send_anything(self.topic, message, conf)
+
+    def send_start_ofs(self, params):
+        self.logger.warning('START OFS: %s', params)
+        inputs = start_ofs_pb2.StartOFS.Inputs(**params["inputs"])
+        outputs = start_ofs_pb2.StartOFS.Outputs(**params["outputs"])
+        serializer = ProtobufSerializer(start_ofs_pb2.StartOFS, schema_registry_client)
+        conf = self.__get_producer_config(serializer)
+        message = start_ofs_pb2.StartOFS(scenarioId = params["scenarioId"], inputs = inputs, outputs = outputs)
         self.__send_anything(self.topic, message, conf)
 
 class ComponentKafkaMessageSender(KafkaMessageSender):

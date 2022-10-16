@@ -1,0 +1,36 @@
+syntax = "proto2";
+
+package harmonyServer;
+
+message StartOFS {
+  required string scenarioId = 1;
+  required Inputs inputs = 2;
+  required Outputs outputs = 3;
+
+  message Inputs {
+    required string DBHost = 1;
+    required int32 DBPort = 2;
+    optional bool DBSSL = 3;
+    optional bool DBAuthentication = 4;
+    optional string DBAuthenticationSource = 5;
+    optional string DBAuthenticationType = 6;
+    optional string DBAuthenticationUserName = 7;
+    optional string DBAuthenticationPassword = 8;
+    optional string DatabaseName = 9;
+    optional string NodesCollection = 10;
+    optional string LinksCollection = 11;
+    optional string ZonesCollection = 12;
+    required string ConsolidationCentresCollection = 13;
+    required string MicrohubsCollection = 14;
+    required string ParcelDemandCollection = 15;
+    optional string ShipmentsDemandCollection = 16;
+    optional string ShipmentsToursCollection = 17;
+    optional string ParcelToursCollection = 18;
+    optional string TravelTimesSkimCollection = 19;
+    optional string DistanceSkimCollection = 20;
+  }
+
+  message Outputs {
+    required string OFSResults = 1;
+  }
+}
