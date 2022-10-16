@@ -28,6 +28,7 @@ message StartOFS {
     optional string ParcelToursCollection = 18;
     optional string TravelTimesSkimCollection = 19;
     optional string DistanceSkimCollection = 20;
+    optional string SettingsFile = 21;
   }
 
   message Outputs {
