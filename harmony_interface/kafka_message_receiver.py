@@ -8,6 +8,7 @@ from .protos.common import progress_outputs_pb2
 from .protos.common import stop_pb2
 from .protos.tfs import start_tfs_pb2
 from .protos.tfs_ofs_data_transform import start_tfs_ofs_data_transform_pb2
+from .protos.ofs import start_ofs_pb2
 # noinspection PyUnresolvedReferences
 from confluent_kafka import DeserializingConsumer
 # noinspection PyUnresolvedReferences
@@ -91,6 +92,9 @@ class KafkaMessageReceiver(object):
 
         elif self.topic == "tfs_ofs_data_transform":
             protobuf_deserializer = ProtobufDeserializer(start_tfs_ofs_data_transform_pb2.StartTFSOFSDataTransform)
+
+        elif self.topic == "ofs":
+            protobuf_deserializer = ProtobufDeserializer(start_ofs_pb2.StartOFS)
 
         if protobuf_deserializer is None:
             self.logger.warning('protobuf_deserializer: checking message not possible !')
