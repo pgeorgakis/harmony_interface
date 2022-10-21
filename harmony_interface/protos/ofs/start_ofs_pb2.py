@@ -14,7 +14,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0fstart_ofs.proto\x12\rharmonyServer\"\xf8\x05\n\x08StartOFS\x12\x12\n\nscenarioId\x18\x01 \x02(\t\x12.\n\x06inputs\x18\x02 \x02(\x0b\x32\x1e.harmonyServer.StartOFS.Inputs\x12\x30\n\x07outputs\x18\x03 \x02(\x0b\x32\x1f.harmonyServer.StartOFS.Outputs\x1a\xd6\x04\n\x06Inputs\x12\x0e\n\x06\x44\x42Host\x18\x01 \x02(\t\x12\x0e\n\x06\x44\x42Port\x18\x02 \x02(\x05\x12\r\n\x05\x44\x42SSL\x18\x03 \x01(\x08\x12\x18\n\x10\x44\x42\x41uthentication\x18\x04 \x01(\x08\x12\x1e\n\x16\x44\x42\x41uthenticationSource\x18\x05 \x01(\t\x12\x1c\n\x14\x44\x42\x41uthenticationType\x18\x06 \x01(\t\x12 \n\x18\x44\x42\x41uthenticationUserName\x18\x07 \x01(\t\x12 \n\x18\x44\x42\x41uthenticationPassword\x18\x08 \x01(\t\x12\x14\n\x0c\x44\x61tabaseName\x18\t \x01(\t\x12\x17\n\x0fNodesCollection\x18\n \x01(\t\x12\x17\n\x0fLinksCollection\x18\x0b \x01(\t\x12\x17\n\x0fZonesCollection\x18\x0c \x01(\t\x12&\n\x1e\x43onsolidationCentresCollection\x18\r \x02(\t\x12\x1b\n\x13MicrohubsCollection\x18\x0e \x02(\t\x12\x1e\n\x16ParcelDemandCollection\x18\x0f \x02(\t\x12!\n\x19ShipmentsDemandCollection\x18\x10 \x01(\t\x12 \n\x18ShipmentsToursCollection\x18\x11 \x01(\t\x12\x1d\n\x15ParcelToursCollection\x18\x12 \x01(\t\x12!\n\x19TravelTimesSkimCollection\x18\x13 \x01(\t\x12\x1e\n\x16\x44istanceSkimCollection\x18\x14 \x01(\t\x12\x14\n\x0cSettingsFile\x18\x15 \x01(\t\x1a\x1d\n\x07Outputs\x12\x12\n\nOFSResults\x18\x01 \x02(\t')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0fstart_ofs.proto\x12\rharmonyServer\"\xd5\x01\n\x08StartOFS\x12\x12\n\nscenarioId\x18\x01 \x02(\t\x12.\n\x06inputs\x18\x02 \x02(\x0b\x32\x1e.harmonyServer.StartOFS.Inputs\x12\x30\n\x07outputs\x18\x03 \x02(\x0b\x32\x1f.harmonyServer.StartOFS.Outputs\x1a\x34\n\x06Inputs\x12\x14\n\x0cScenarioName\x18\x01 \x02(\t\x12\x14\n\x0cSettingsFile\x18\x02 \x02(\t\x1a\x1d\n\x07Outputs\x12\x12\n\nOFSResults\x18\x01 \x02(\t')
 
 
 
@@ -48,9 +48,9 @@ if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
   _STARTOFS._serialized_start=35
-  _STARTOFS._serialized_end=795
-  _STARTOFS_INPUTS._serialized_start=166
-  _STARTOFS_INPUTS._serialized_end=764
-  _STARTOFS_OUTPUTS._serialized_start=766
-  _STARTOFS_OUTPUTS._serialized_end=795
+  _STARTOFS._serialized_end=248
+  _STARTOFS_INPUTS._serialized_start=165
+  _STARTOFS_INPUTS._serialized_end=217
+  _STARTOFS_OUTPUTS._serialized_start=219
+  _STARTOFS_OUTPUTS._serialized_end=248
 # @@protoc_insertion_point(module_scope)
