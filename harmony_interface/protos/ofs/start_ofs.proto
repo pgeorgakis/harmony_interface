@@ -10,6 +10,8 @@ message StartOFS {
   message Inputs {
     required string ScenarioName = 1;
     required string SettingsFile = 2;
+    required string AimsunModelFile = 3;
+    required string PathAssignmentFile = 4;
   }
 
   message Outputs {
