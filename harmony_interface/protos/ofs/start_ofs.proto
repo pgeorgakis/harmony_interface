@@ -8,13 +8,14 @@ message StartOFS {
   required Outputs outputs = 3;
 
   message Inputs {
-    required string ScenarioName = 1;
+    required string UseCase = 1;
     required string SettingsFile = 2;
     required string AimsunModelFile = 3;
     required string PathAssignmentFile = 4;
   }
 
   message Outputs {
-    required string OFSResults = 1;
+    required string VehicleStats = 1;
+    required string SectionsStats = 2;
   }
 }
